@@ -1,0 +1,129 @@
+/*Custom properties*/
+
+:root{
+    --color-primary: #181818;
+    --color-secondary: #f0f0f0;
+    /*typoghaphy*/
+    --principal-type : Helveltica, Arial, sans-serif;
+    --secondary-type : Verdana;
+    font-size: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --color-primary: #f0f0f0;
+        --color-secondary: #181818;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root{
+        --color-primary: black;
+        --color-secondary: white;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *{
+        animation: none;
+        transition: none;
+    }
+}
+
+/*Reset ALL margins, paddings, borders and define box-sizing*/
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+
+}
+
+img , picture , video , iframe , figure {
+    /**/
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /*nos permite configurar el tamaño del objeto dentro de una img*/
+    /*object-fit: scale-down achica la img dentro del contenedor <img>*/
+    object-fit: cover;
+    object-position: center center;
+}
+
+a {
+    display: block;
+}
+
+p a {
+    display: inline;
+}
+
+li{
+    list-style-type: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, i, b, u , em{
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+blockquote::before, blockquote::after, q::before, q::after{
+    content: '';
+    content: none;
+}
+
+::selection{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+form, input, textarea, select, button, label{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+    /*opcional:*/
+    appearance: none;
+}
+
+table, tr, td{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+svg{
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+textarea {
+    resize: none;
+}
+
+body{
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--principal-type);
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    line-height: 1.4em;
+    font-smooth: always;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}

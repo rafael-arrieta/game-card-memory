@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="stylesheet" href="./CSS/myResetStylesheet.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <title>Memory game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cards__container" id="cardsContainer" >
+            <div id="name__game__containter" class="intro__game"></div>
+        </div>
+        <div class="game__panel">
+            <div class="game__panel--input" id="gamePanelName">
+                <input type="text" class="game__input" placeholder="Tu nombre" id="userNameInput">
+                <p class="error__message display__none" id="errorInput">nombre inválido</p>
+            </div>
+            <div class="game__panel--child" >
+                <h2 id="winnerFlagDom">0</h2>
+                <p>Encontrados</p>
+            </div>
+            <div class="game__panel--child">
+                <h3  id="userLifes">0</h3>
+                <p>Vidas</p>
+            </div>
+            <div class="game__panel--child">
+                <h4 id="currentScore">0</h4>
+                <p>Score</p>
+            </div>
+            <div class="game__panel--child" >
+                <h5 id="lastScore">0</h5>
+                <p>Score anterior</p>
+            </div>
+            <div class="game__panel--child">
+                <h6 id="totalScore">0</h6>
+                <p>Score total</p>
+            </div>
+            <button id="buttonGetNumber" class="btn">Comenzar!</button>
+        </div>
+    </div>
+    <a href="http://www.rafael-arrieta.com.ar" target="_blank" class="dev__container">
+        <p>Rafael Arrieta - Front End Dev - www.rafael-arrieta.com.ar</p>
+    </a>
+    <div class="invalid__resolution">
+        <p>La resolucion es inválida</p>
+        <p>por favor ajuste su pantalla</p>
+        <p>o rote su pantalla</p>
+    </div>
+    
+    <script src="./JS/main.js"></script>
+</body>
+</html>
