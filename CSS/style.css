@@ -234,7 +234,7 @@ input{
     background-color: rgb(40, 40, 40);
 }
 
-@media screen and (max-width:1170px) and (min-width: 740px) {
+@media screen and (max-width:1170px) and (min-width: 740px) and (orientation: portrait) {
     /*.container{display: none;}
     .dev__container{display: none;}*/
     body{
@@ -253,7 +253,7 @@ input{
     }
 }
 
-@media screen and (max-width:740px) {
+@media screen and (max-width:740px) and (orientation: landscape) {
     .container{display: none;}
     .dev__container{display: none;}
     .invalid__resolution{
