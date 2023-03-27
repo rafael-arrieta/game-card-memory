@@ -171,6 +171,16 @@ p{
     align-self: flex-start;
 }
 
+.btn.disabled {
+    background-color: grey;
+    border: 1px solid darkgrey;
+}
+
+.btn.disabled:hover {
+    background-color: grey;
+    border: 1px solid darkgrey;
+    transform:initial;
+}
 
 .btn:hover{
     background-color: rgb(200, 10, 10);
@@ -203,24 +213,14 @@ input{
     display: none;
 }
 
-.visible__none{
-
-    opacity: 0;
+.img__card{
+    width: 70%;
+    opacity:0;
+    transition: opacity 0.5s;
 }
 
 .to__visible{
-    transition: opacity 0.5s;
     opacity: 1;
-    
-}
-
-.img__card{
-    width: 70%;
-}
-
-.to__invisible{
-    transition: opacity 0.5s;
-    opacity: 0;
 }
 
 .bg-red{
