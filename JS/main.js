@@ -37,12 +37,9 @@ function showCardSelected(element, value) {
 function hideCards() {
     firstCardSelected[2].classList.add("card");
     firstCardSelected[2].classList.add("card__reverse");
-    
     firstCardSelected[2].childNodes[1].classList.remove("to__visible");
-
     secondCardSelected[2].classList.add("card");
     secondCardSelected[2].classList.add("card__reverse");
-    
     secondCardSelected[2].childNodes[1].classList.remove("to__visible");
 
     setTimeout(() => {
@@ -104,7 +101,6 @@ function cardButtonListener(arr, i, element) {
     // function params: array, index position and HTML element
     if (foundCards.includes(arr[i]) !== true) {
         if (firstCardSelected[0] === -1 && secondCardSelected[0] === -1) {
-            //true
             firstCardSelected = [arr[i], i, element];
             showCardSelected(element, arr[i]); // show the card selected
         } else if (
@@ -139,11 +135,10 @@ function createCardButons(arr) {
 function createDomElements(arr) {
     cardsContainer.classList.add("cards__container--grid");
     cardsContainer.innerHTML = ``;
-    arr.forEach((el) => {
+    arr.forEach(_=> {
         cardsContainer.innerHTML += `
             <div data-card class="card__reverse"></div>`;
     });
-    //<img class="visible__none img__card" src="./assets/img${el}.svg" alt="${el}">
 }
 
 // - 6
