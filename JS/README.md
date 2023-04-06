@@ -1,5 +1,6 @@
 El juego es un tributo del memory bonus del Super Mario
 Bros 3 de la consola NES.
+
 Los SVG de cada uno de los personajes, el logo de las cards
 y la portada fueron realizados en Figma y exportados
 

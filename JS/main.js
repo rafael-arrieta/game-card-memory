@@ -23,24 +23,24 @@ let enableReset = true;
 
 function showCardSelected(element, value) {
     element.innerHTML = `
-        <img class="img__card" src="./assets/img${value}.svg" alt="${value}">
-    `;
-    element.classList.add("card");
-    element.classList.remove("card__reverse");
+            <img class="img__card" src="./assets/img${value}.svg" alt="${value}">
+        `;
+    element.classList.add('card');
+    element.classList.remove('card__reverse');
     console.log(element.childNodes[1]);
     setTimeout(() => {
-        element.childNodes[1].classList.add("to__visible");
+        element.childNodes[1].classList.add('to__visible');
     }, 10);
     
 }
 
 function hideCards() {
-    firstCardSelected[2].classList.add("card");
-    firstCardSelected[2].classList.add("card__reverse");
-    firstCardSelected[2].childNodes[1].classList.remove("to__visible");
-    secondCardSelected[2].classList.add("card");
-    secondCardSelected[2].classList.add("card__reverse");
-    secondCardSelected[2].childNodes[1].classList.remove("to__visible");
+    firstCardSelected[2].classList.add('card');
+    firstCardSelected[2].classList.add('card__reverse');
+    firstCardSelected[2].childNodes[1].classList.remove('to__visible');
+    secondCardSelected[2].classList.add('card');
+    secondCardSelected[2].classList.add('card__reverse');
+    secondCardSelected[2].childNodes[1].classList.remove('to__visible');
 
     setTimeout(() => {
         firstCardSelected[2].innerHTML = ``;
@@ -102,7 +102,7 @@ function cardButtonListener(arr, i, element) {
     if (foundCards.includes(arr[i]) !== true) {
         if (firstCardSelected[0] === -1 && secondCardSelected[0] === -1) {
             firstCardSelected = [arr[i], i, element];
-            showCardSelected(element, arr[i]); // show the card selected
+            showCardSelected(element, arr[i]); // show the card selected // 10
         } else if (
             firstCardSelected[0] !== -1 &&
             secondCardSelected[0] === -1
@@ -112,9 +112,10 @@ function cardButtonListener(arr, i, element) {
                 //descarta que sea la misma carta
                 showCardSelected(element, arr[i]); // show the card selected
                 //llamar a la funcion que evalua los dos casos y que ponga en -1 a los array
-                evalCardsValues();
+                evalCardsValues(); // 11
             } else if (firstCardSelected[1] === secondCardSelected[1]) {
                 //si es la misma carta la borra del array
+                //if card values are identi
                 secondCardSelected = [-1, -1, ""];
             }
         }
@@ -126,7 +127,7 @@ function createCardButons(arr) {
     const cardArrayButtons = document.querySelectorAll("[data-card]");
     for (let i = 0; i < cardArrayButtons.length; i++) {
         cardArrayButtons[i].addEventListener("click", () => {
-            cardButtonListener(arr, i, cardArrayButtons[i]);
+            cardButtonListener(arr, i, cardArrayButtons[i]); //9
         });
     }
 }
@@ -153,6 +154,8 @@ function changeToEvenNumber(arr) {
 
 // - 5
 function createRandomArray() {
+    /*this func returns a array of random numbers
+    from zero to seventeen*/
     let arr = [];
     let number;
     while (arr.length <= 17) {
@@ -168,6 +171,7 @@ function createRandomArray() {
 
 // - 4
 function resetValues() {
+    /*this function resets all values and scores*/
     firstCardSelected = [-1, -1];
     secondCardSelected = [-1, -1];
     winnerFlag = 0;
@@ -181,6 +185,10 @@ function resetValues() {
 
 // - 3
 function cardsMainFunc() {
+    /** this function makes the calls to many 
+    functions and saves the local variables that 
+    are sent by parameters to other functions */
+    
     resetValues(); //4
     buttonGetNumber.innerText = `Reset`;
     let arr = createRandomArray(); //5
@@ -191,6 +199,8 @@ function cardsMainFunc() {
 
 // - 2
 function getUser() {
+    /* this function evals that the string of input does not contain
+    empty characters, limits this amount and trim the spaces*/ 
     userName = userNameInput.value.trim().substring(0, 10);
     if (userName !== "") {
         gamePanelName.innerHTML = `<h1>${userName}</h1>`;
@@ -199,7 +209,10 @@ function getUser() {
         errorInput.classList.remove("display__none");
     }
 }
+
 // - 1
 buttonGetNumber.addEventListener("click", () => {
+    /*This function evals if 'enableReset' is in true,
+    this flag changes its state when a setTimeOut is in progress */
     if (enableReset) getUser(); //2
 });
